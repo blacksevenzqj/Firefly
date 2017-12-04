@@ -9,7 +9,7 @@ import org.firefly.transport.api.connector.JConnector;
 import org.firefly.transport.api.exception.ConnectFailedException;
 import org.firefly.transport.netty.connector.ConsumerToProviderNettyConnector;
 
-public class SyncJupiterClient {
+public class SyncFireflyClient {
 
     public static void main(String[] args) {
         final FClient client = new DefaultClient().withConnector(new ConsumerToProviderNettyConnector());
