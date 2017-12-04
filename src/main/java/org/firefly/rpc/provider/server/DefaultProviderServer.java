@@ -20,7 +20,7 @@ import org.firefly.transport.api.acceptor.JAcceptor;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-import static org.firefly.common.util.StackTraceUtil.stackTrace;
+import static org.firefly.common.util.exception.StackTraceUtil.stackTrace;
 
 public class DefaultProviderServer implements JServer {
 

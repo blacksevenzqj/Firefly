@@ -1,4 +1,4 @@
-package org.firefly.common.util.internal;
+package org.firefly.common.util.internal.unsafe;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.atomic.AtomicBoolean;
-import static org.firefly.common.util.StackTraceUtil.stackTrace;
+import static org.firefly.common.util.exception.StackTraceUtil.stackTrace;
 
 public abstract class AbstractRejectedExecutionHandler implements RejectedExecutionHandler {
 

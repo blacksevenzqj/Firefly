@@ -3,7 +3,7 @@ package org.firefly.transport.netty.handler.codec.decoder;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ReplayingDecoder;
-import org.firefly.common.util.Signal;
+import org.firefly.common.util.exception.Signal;
 import org.firefly.common.util.SystemClock;
 import org.firefly.common.util.SystemPropertyUtil;
 import org.firefly.model.rpc.request.JRequestBytes;

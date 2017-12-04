@@ -2,7 +2,7 @@ package org.firefly.rpc.consumer.proxy.future;
 
 import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
-import org.firefly.common.util.Signal;
+import org.firefly.common.util.exception.Signal;
 import org.firefly.common.util.constant.JConstants;
 import org.firefly.common.util.internal.Maps;
 import org.firefly.model.rpc.response.JResponse;
@@ -21,7 +21,7 @@ import java.net.SocketAddress;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
 
-import static org.firefly.common.util.StackTraceUtil.stackTrace;
+import static org.firefly.common.util.exception.StackTraceUtil.stackTrace;
 import static org.firefly.common.util.Preconditions.checkNotNull;
 
 

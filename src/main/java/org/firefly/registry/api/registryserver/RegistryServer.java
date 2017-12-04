@@ -3,7 +3,7 @@ package org.firefly.registry.api.registryserver;
 import java.lang.reflect.Constructor;
 import java.util.List;
 import com.google.common.collect.Lists;
-import org.firefly.common.util.ExceptionUtil;
+import org.firefly.common.util.exception.ExceptionUtil;
 import org.firefly.common.util.Reflects;
 import org.firefly.common.util.SystemPropertyUtil;
 

@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.lang.reflect.Constructor;
 import java.util.concurrent.*;
-import static org.firefly.common.util.StackTraceUtil.stackTrace;
+import static org.firefly.common.util.exception.StackTraceUtil.stackTrace;
 
 public class ThreadPoolExecutorFactory extends AbstractExecutorFactory {
 

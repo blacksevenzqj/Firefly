@@ -1,6 +1,6 @@
-package org.firefly.common.util.internal;
+package org.firefly.common.util.internal.unsafe;
 
-import org.firefly.common.util.ExceptionUtil;
+import org.firefly.common.util.exception.ExceptionUtil;
 
 public class UnsafeUpdater {
 

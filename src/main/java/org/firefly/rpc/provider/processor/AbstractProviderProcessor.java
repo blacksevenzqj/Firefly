@@ -1,6 +1,6 @@
 package org.firefly.rpc.provider.processor;
 
-import org.firefly.common.util.ExceptionUtil;
+import org.firefly.common.util.exception.ExceptionUtil;
 import org.firefly.model.rpc.request.JRequest;
 import org.firefly.model.rpc.request.JRequestBytes;
 import org.firefly.model.rpc.response.JResponseBytes;
@@ -14,7 +14,7 @@ import org.firefly.serialization.SerializerFactory;
 import org.firefly.transport.api.processor.ProviderProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import static org.firefly.common.util.StackTraceUtil.stackTrace;
+import static org.firefly.common.util.exception.StackTraceUtil.stackTrace;
 
 public abstract class AbstractProviderProcessor implements ProviderProcessor, LookupService {
 
@@ -50,7 +50,7 @@ public abstract class AbstractProviderProcessor implements ProviderProcessor, Lo
             JChannel channel, long invokeId, byte s_code, byte status, Throwable cause, boolean closeChannel) {
 
         ResultWrapper result = new ResultWrapper();
-        // 截断cause, 避免客户端无法找到cause类型而无法序列化
+        // 截断cause, 避免客户端无法找到cause类型而无法序列化（清除 cause异常实例 的 异常链）
         cause = ExceptionUtil.cutCause(cause);
         result.setError(cause);
 

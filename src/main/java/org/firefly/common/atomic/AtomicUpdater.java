@@ -1,6 +1,6 @@
 package org.firefly.common.atomic;
 
-import org.firefly.common.util.internal.JUnsafe;
+import org.firefly.common.util.internal.unsafe.JUnsafe;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
 /**

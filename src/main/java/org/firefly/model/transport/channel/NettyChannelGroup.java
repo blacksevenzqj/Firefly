@@ -3,7 +3,7 @@ package org.firefly.model.transport.channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import org.firefly.common.atomic.AtomicUpdater;
-import org.firefly.common.util.ExceptionUtil;
+import org.firefly.common.util.exception.ExceptionUtil;
 import org.firefly.common.util.SystemClock;
 import org.firefly.common.util.SystemPropertyUtil;
 import org.firefly.common.util.constant.JConstants;

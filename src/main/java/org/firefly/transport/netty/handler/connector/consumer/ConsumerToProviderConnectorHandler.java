@@ -4,12 +4,12 @@ import io.netty.channel.*;
 import io.netty.util.ReferenceCountUtil;
 import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
-import org.firefly.common.util.Signal;
+import org.firefly.common.util.exception.Signal;
 import org.firefly.model.rpc.response.JResponseBytes;
 import org.firefly.model.transport.channel.NettyChannel;
 import org.firefly.transport.api.processor.ConsumerProcessor;
 import java.io.IOException;
-import static org.firefly.common.util.StackTraceUtil.stackTrace;
+import static org.firefly.common.util.exception.StackTraceUtil.stackTrace;
 
 @ChannelHandler.Sharable
 public class ConsumerToProviderConnectorHandler extends ChannelInboundHandlerAdapter {

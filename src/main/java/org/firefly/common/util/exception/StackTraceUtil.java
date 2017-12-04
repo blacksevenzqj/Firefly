@@ -1,4 +1,4 @@
-package org.firefly.common.util;
+package org.firefly.common.util.exception;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

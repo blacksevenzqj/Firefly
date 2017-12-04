@@ -1,11 +1,11 @@
 package org.firefly.transport.api.exception;
 
-import org.firefly.common.util.Signal;
+import org.firefly.common.util.exception.Signal;
 
 /**
  * {@link Signal} has an empty stack trace, you can throw them just like using goto.
  *
- * 当全局goto用的, {@link Signal}有一个空堆栈，你可以像使用goto一样抛出它们.
+ * 当全局goto用的, {@link Signal}有一个空堆栈，你可以像使用goto一样抛出它们：返照Netty原生 Signal类。
  */
 @SuppressWarnings("all")
 public class IoSignals {

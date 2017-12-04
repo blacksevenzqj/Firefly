@@ -1,6 +1,6 @@
 package org.firefly.spring.support;
 
-import org.firefly.common.util.ExceptionUtil;
+import org.firefly.common.util.exception.ExceptionUtil;
 import org.firefly.common.util.Strings;
 import org.firefly.common.util.SystemPropertyUtil;
 import org.firefly.common.util.internal.Lists;

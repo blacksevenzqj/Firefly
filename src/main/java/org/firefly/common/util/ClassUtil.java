@@ -2,6 +2,7 @@ package org.firefly.common.util;
 
 import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
+import org.firefly.common.util.exception.ExceptionUtil;
 
 public class ClassUtil {
 

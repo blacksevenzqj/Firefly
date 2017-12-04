@@ -10,7 +10,7 @@ import io.netty.util.Attribute;
 import io.netty.util.AttributeKey;
 import io.netty.util.concurrent.GlobalEventExecutor;
 import io.netty.util.internal.ConcurrentSet;
-import org.firefly.common.util.ExceptionUtil;
+import org.firefly.common.util.exception.ExceptionUtil;
 import org.firefly.common.util.Pair;
 import org.firefly.common.util.SystemClock;
 import org.firefly.common.util.constant.JConstants;

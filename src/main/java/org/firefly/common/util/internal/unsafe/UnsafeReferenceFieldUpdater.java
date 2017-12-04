@@ -1,4 +1,4 @@
-package org.firefly.common.util.internal;
+package org.firefly.common.util.internal.unsafe;
 
 import sun.misc.Unsafe;
 

@@ -1,6 +1,8 @@
 package org.firefly.common.util.internal;
 
 import org.firefly.common.util.SystemPropertyUtil;
+import org.firefly.common.util.internal.unsafe.UnsafeReferenceFieldUpdater;
+import org.firefly.common.util.internal.unsafe.UnsafeUpdater;
 
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;

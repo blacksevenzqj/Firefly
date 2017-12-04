@@ -5,7 +5,7 @@ import io.netty.util.ReferenceCountUtil;
 import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
 import org.firefly.common.util.Pair;
-import org.firefly.common.util.Signal;
+import org.firefly.common.util.exception.Signal;
 import org.firefly.model.registry.PublishSubscriptionMessage;
 import org.firefly.model.registry.metadata.RegisterMeta;
 import org.firefly.model.registry.nonack.ClientNettyConnectorMessageNonAck;
@@ -16,7 +16,7 @@ import org.firefly.transport.netty.connector.ClientToRegistryNettyConnector;
 
 import java.io.IOException;
 import java.util.List;
-import static org.firefly.common.util.StackTraceUtil.stackTrace;
+import static org.firefly.common.util.exception.StackTraceUtil.stackTrace;
 
 @ChannelHandler.Sharable
 public class ClientPublishSubscriptionMessageHandler extends ChannelInboundHandlerAdapter {

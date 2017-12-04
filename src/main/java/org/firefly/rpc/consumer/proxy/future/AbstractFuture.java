@@ -1,7 +1,7 @@
 package org.firefly.rpc.consumer.proxy.future;
 
-import org.firefly.common.util.Signal;
-import org.firefly.common.util.internal.JUnsafe;
+import org.firefly.common.util.exception.Signal;
+import org.firefly.common.util.internal.unsafe.JUnsafe;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;

@@ -35,7 +35,7 @@ import java.net.SocketAddress;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
 import static org.firefly.common.util.Preconditions.checkNotNull;
-import static org.firefly.common.util.StackTraceUtil.stackTrace;
+import static org.firefly.common.util.exception.StackTraceUtil.stackTrace;
 
 public final class ClientToRegistryNettyConnector extends NettyTcpConnector {
 

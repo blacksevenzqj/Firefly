@@ -3,7 +3,7 @@ package org.firefly.transport.netty.handler.codec.decoder.registryserver;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ReplayingDecoder;
-import org.firefly.common.util.Signal;
+import org.firefly.common.util.exception.Signal;
 import org.firefly.model.registry.PublishSubscriptionMessage;
 import org.firefly.model.transport.ack.Acknowledge;
 import org.firefly.model.transport.protocol.JProtocolHeader;

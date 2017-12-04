@@ -1,6 +1,6 @@
 package org.firefly.transport.netty.connector.connection.consumer;
 
-import org.firefly.common.util.ExceptionUtil;
+import org.firefly.common.util.exception.ExceptionUtil;
 import org.firefly.model.registry.metadata.RegisterMeta;
 import org.firefly.model.transport.channel.interfice.JChannelGroup;
 import org.firefly.model.transport.metadata.Directory;

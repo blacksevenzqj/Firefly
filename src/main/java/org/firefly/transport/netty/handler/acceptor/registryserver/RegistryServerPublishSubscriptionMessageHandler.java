@@ -3,7 +3,7 @@ package org.firefly.transport.netty.handler.acceptor.registryserver;
 import io.netty.channel.*;
 import io.netty.util.ReferenceCountUtil;
 import io.netty.util.internal.ConcurrentSet;
-import org.firefly.common.util.Signal;
+import org.firefly.common.util.exception.Signal;
 import org.firefly.common.util.Strings;
 import org.firefly.model.registry.PublishSubscriptionMessage;
 import org.firefly.model.registry.metadata.RegisterMeta;

@@ -14,7 +14,7 @@ import java.lang.management.RuntimeMXBean;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicLong;
 
-import static org.firefly.common.util.StackTraceUtil.stackTrace;
+import static org.firefly.common.util.exception.StackTraceUtil.stackTrace;
 
 /**
  * 链路追踪ID生成的工具类.

@@ -33,7 +33,7 @@ import org.firefly.serialization.SerializerType;
 import java.util.List;
 import java.util.Map;
 
-import static org.firefly.common.util.StackTraceUtil.stackTrace;
+import static org.firefly.common.util.exception.StackTraceUtil.stackTrace;
 
 abstract class AbstractDispatcher implements Dispatcher {
 

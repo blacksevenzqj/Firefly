@@ -2,7 +2,7 @@ package org.firefly.transport.netty.handler.acceptor.provider;
 
 import io.netty.channel.*;
 import io.netty.util.ReferenceCountUtil;
-import org.firefly.common.util.Signal;
+import org.firefly.common.util.exception.Signal;
 import org.firefly.model.rpc.request.JRequestBytes;
 import org.firefly.model.transport.channel.NettyChannel;
 import org.firefly.model.transport.channel.interfice.JChannel;

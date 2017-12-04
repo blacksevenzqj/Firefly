@@ -1,10 +1,10 @@
 package org.firefly.serialization.java;
 
 
-import org.firefly.common.util.ExceptionUtil;
+import org.firefly.common.util.exception.ExceptionUtil;
 import org.firefly.common.util.internal.InternalThreadLocal;
-import org.firefly.common.util.internal.UnsafeReferenceFieldUpdater;
-import org.firefly.common.util.internal.UnsafeUpdater;
+import org.firefly.common.util.internal.unsafe.UnsafeReferenceFieldUpdater;
+import org.firefly.common.util.internal.unsafe.UnsafeUpdater;
 import org.firefly.serialization.Serializer;
 import org.firefly.serialization.SerializerType;
 

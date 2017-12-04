@@ -11,7 +11,7 @@ import org.firefly.rpc.consumer.proxy.future.DefaultInvokeFuture;
 import org.firefly.rpc.exeption.FireflySerializationException;
 import org.firefly.serialization.Serializer;
 import org.firefly.serialization.SerializerFactory;
-import static org.firefly.common.util.StackTraceUtil.stackTrace;
+import static org.firefly.common.util.exception.StackTraceUtil.stackTrace;
 
 public class ConsumerMessageTask implements Runnable {
 
