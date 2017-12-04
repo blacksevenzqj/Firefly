@@ -1,60 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Copyright (c) 2015 The Jupiter Project
-  ~
-  ~ Licensed under the Apache License, version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at:
-  ~
-  ~   http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:jupiter="http://www.jupiter-rpc.org/jupiter"
+       xmlns:firefly="http://www.firefly-rpc.org/firefly"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.jupiter-rpc.org/jupiter
-       http://www.jupiter-rpc.org/jupiter/jupiter.xsd">
+       http://www.firefly-rpc.org/firefly
+       http://www.firefly-rpc.org/firefly/firefly.xsd">
 
-    <jupiter:client id="jupiterClient" registryType="default">
-        <jupiter:property registryServerAddresses="127.0.0.1:20001" />
+    <firefly:client id="jupiterClient" registryType="default">
+        <firefly:property registryServerAddresses="127.0.0.1:20001" />
         <!-- 可选配置 -->
         <!--
             String registryServerAddresses                  // 注册中心地址 [host1:port1,host2:port2....]
             String providerServerAddresses                  // IP直连到providers [host1:port1,host2:port2....]
         -->
-    </jupiter:client>
+    </firefly:client>
 
     <!-- consumer -->
-    <jupiter:consumer id="serviceConsumer" client="jupiterClient" interfaceClass="org.firefly.example.providerservice.ServiceTest">
+    <firefly:consumer id="serviceConsumer" client="jupiterClient" interfaceClass="org.firefly.example.providerservice.ServiceTest">
         <!-- 以下都选项可不填 -->
         <!-- 服务版本号, 通常在接口不兼容时版本号才需要升级 -->
-        <jupiter:property version="1.0.0.daily" />
+        <firefly:property version="1.0.0.daily" />
         <!-- 序列化/反序列化类型: (proto_stuff, hessian, kryo, java)可选, 默认proto_stuff -->
-        <jupiter:property serializerType="proto_stuff" />
+        <firefly:property serializerType="proto_stuff" />
         <!-- 软负载均衡类型[random, round_robin] -->
-        <jupiter:property loadBalancerType="round_robin" />
+        <firefly:property loadBalancerType="round_robin" />
         <!-- 派发方式: (round, broadcast)可选, 默认round(单播) -->
-        <jupiter:property dispatchType="round" />
+        <firefly:property dispatchType="round" />
         <!-- 调用方式: (sync, async)可选, 默认sync(同步调用) -->
-        <jupiter:property invokeType="sync" />
+        <firefly:property invokeType="sync" />
         <!-- 集群容错策略: (fail_fast, fail_over, fail_safe)可选, 默认fail_fast(快速失败) -->
-        <jupiter:property clusterStrategy="fail_fast" />
+        <firefly:property clusterStrategy="fail_fast" />
         <!-- 在fail_over策略下的失败重试次数 -->
-        <jupiter:property failoverRetries="2" />
+        <firefly:property failoverRetries="2" />
         <!-- 超时时间设置 -->
-        <jupiter:property timeoutMillis="3000" />
-        <jupiter:methodSpecials>
+        <firefly:property timeoutMillis="3000" />
+        <firefly:methodSpecials>
             <!-- 方法的单独配置 -->
-            <jupiter:methodSpecial methodName="sayHello" timeoutMillis="5000" clusterStrategy="fail_fast" />
-        </jupiter:methodSpecials>
+            <firefly:methodSpecial methodName="sayHello" timeoutMillis="5000" clusterStrategy="fail_fast" />
+        </firefly:methodSpecials>
         <!-- 可选配置 -->
         <!--
             SerializerType serializerType                   // 序列化/反序列化方式
@@ -69,5 +54,5 @@
             ClusterInvoker.Strategy clusterStrategy;        // 集群容错策略
             int failoverRetries                             // fail_over的重试次数
         -->
-    </jupiter:consumer>
+    </firefly:consumer>
 </beans>

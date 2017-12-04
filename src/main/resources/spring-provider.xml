@@ -1,45 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Copyright (c) 2015 The Jupiter Project
-  ~
-  ~ Licensed under the Apache License, version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at:
-  ~
-  ~   http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:jupiter="http://www.jupiter-rpc.org/jupiter"
+       xmlns:firefly="http://www.firefly-rpc.org/firefly"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.jupiter-rpc.org/jupiter
-       http://www.jupiter-rpc.org/jupiter/jupiter.xsd">
+       http://www.firefly-rpc.org/firefly
+       http://www.firefly-rpc.org/firefly/firefly.xsd">
 
     <bean id="providerAcceptor" class="org.firefly.transport.netty.acceptor.ProviderServerNettyTcpAcceptor" />
 
-    <jupiter:server id="jupiterServer" registryType="default" acceptor="providerAcceptor">
-        <jupiter:property registryServerAddresses="127.0.0.1:20001" />
+    <firefly:server id="jupiterServer" registryType="default" acceptor="providerAcceptor">
+        <firefly:property registryServerAddresses="127.0.0.1:20001" />
         <!-- 可选配置 -->
         <!--
             String registryServerAddresses                      // 注册中心地址 [host1:port1,host2:port2....]
             ProviderInterceptor[] providerInterceptors          // 全局拦截器
             FlowController<JRequest> flowController             // 全局流量控制
         -->
-    </jupiter:server>
+    </firefly:server>
 
     <!-- provider -->
     <bean id="serviceTest" class="org.firefly.example.providerservice.ServiceTestImpl" />
 
-    <jupiter:provider id="serviceTestProvider" server="jupiterServer" providerImpl="serviceTest">
-        <jupiter:property weight="100"/>
+    <firefly:provider id="serviceTestProvider" server="jupiterServer" providerImpl="serviceTest">
+        <firefly:property weight="100"/>
         <!-- 可选配置 -->
         <!--
             ProviderInterceptor[] providerInterceptors          // 私有拦截器
@@ -49,5 +34,5 @@
             JServer.ProviderInitializer<?> providerInitializer  // 服务延迟初始化
             Executor providerInitializerExecutor                // 服务私有的延迟初始化线程池, 如果未指定则使用全局线程池
         -->
-    </jupiter:provider>
+    </firefly:provider>
 </beans>

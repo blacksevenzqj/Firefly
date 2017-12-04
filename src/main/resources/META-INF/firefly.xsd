@@ -15,10 +15,10 @@
   ~ limitations under the License.
   -->
 
-<xsd:schema xmlns="http://www.jupiter-rpc.org/jupiter"
+<xsd:schema xmlns="http://www.firefly-rpc.org/firefly"
             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns:tool="http://www.springframework.org/schema/tool"
-            targetNamespace="http://www.jupiter-rpc.org/jupiter"
+            targetNamespace="http://www.firefly-rpc.org/firefly"
             elementFormDefault="qualified">
 
     <xsd:import namespace="http://www.springframework.org/schema/beans" />

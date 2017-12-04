@@ -1,1 +1,1 @@
-http\://www.jupiter-rpc.org/jupiter=org.firefly.spring.schema.JupiterNamespaceHandler
+http\://www.firefly-rpc.org/firefly=org.firefly.spring.schema.JupiterNamespaceHandler
