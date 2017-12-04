@@ -21,9 +21,9 @@ import java.util.List;
 /**
  * Consumer bean, 负责构造并初始化 consumer 代理对象.
  */
-public class JupiterSpringConsumerBean<T> implements FactoryBean<T>, InitializingBean {
+public class FireflySpringConsumerBean<T> implements FactoryBean<T>, InitializingBean {
 
-    private JupiterSpringClient client;
+    private FireflySpringClient client;
 
     private Class<T> interfaceClass;                            // 服务接口类型
 
@@ -136,11 +136,11 @@ public class JupiterSpringConsumerBean<T> implements FactoryBean<T>, Initializin
                 .newProxyInstance();
     }
 
-    public JupiterSpringClient getClient() {
+    public FireflySpringClient getClient() {
         return client;
     }
 
-    public void setClient(JupiterSpringClient client) {
+    public void setClient(FireflySpringClient client) {
         this.client = client;
     }
 

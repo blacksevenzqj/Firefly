@@ -4,10 +4,10 @@ import org.firefly.common.util.Strings;
 import org.firefly.common.util.internal.Lists;
 import org.firefly.model.rpc.consumer.cluster.ClusterStrategyConfig;
 import org.firefly.model.rpc.consumer.cluster.MethodSpecialConfig;
-import org.firefly.spring.support.JupiterSpringClient;
-import org.firefly.spring.support.JupiterSpringConsumerBean;
-import org.firefly.spring.support.JupiterSpringProviderBean;
-import org.firefly.spring.support.JupiterSpringServer;
+import org.firefly.spring.support.FireflySpringClient;
+import org.firefly.spring.support.FireflySpringConsumerBean;
+import org.firefly.spring.support.FireflySpringProviderBean;
+import org.firefly.spring.support.FireflySpringServer;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinitionHolder;
 import org.springframework.beans.factory.config.RuntimeBeanReference;
@@ -22,23 +22,23 @@ import org.w3c.dom.NodeList;
 
 import java.util.List;
 
-public class JupiterBeanDefinitionParser implements BeanDefinitionParser {
+public class FireflyBeanDefinitionParser implements BeanDefinitionParser {
 
     private final Class<?> beanClass;
 
-    public JupiterBeanDefinitionParser(Class<?> beanClass) {
+    public FireflyBeanDefinitionParser(Class<?> beanClass) {
         this.beanClass = beanClass;
     }
 
     @Override
     public BeanDefinition parse(Element element, ParserContext parserContext) {
-        if (beanClass == JupiterSpringServer.class) {
+        if (beanClass == FireflySpringServer.class) {
             return parseJupiterServer(element, parserContext);
-        } else if (beanClass == JupiterSpringClient.class) {
+        } else if (beanClass == FireflySpringClient.class) {
             return parseJupiterClient(element, parserContext);
-        } else if (beanClass == JupiterSpringProviderBean.class) {
+        } else if (beanClass == FireflySpringProviderBean.class) {
             return parseJupiterProvider(element, parserContext);
-        } else if (beanClass == JupiterSpringConsumerBean.class) {
+        } else if (beanClass == FireflySpringConsumerBean.class) {
             return parseJupiterConsumer(element, parserContext);
         } else {
             throw new BeanDefinitionValidationException("Unknown class to definition: " + beanClass.getName());

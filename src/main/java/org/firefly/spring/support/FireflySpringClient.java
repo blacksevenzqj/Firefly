@@ -20,7 +20,7 @@ import static org.firefly.common.util.Preconditions.checkNotNull;
 /**
  * firefly client wrapper, 负责初始化并启动客户端.
  */
-public class JupiterSpringClient implements InitializingBean {
+public class FireflySpringClient implements InitializingBean {
 
     private FClient client;
     private String appName;

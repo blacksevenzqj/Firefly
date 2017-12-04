@@ -14,7 +14,7 @@ import static org.firefly.common.util.Preconditions.checkNotNull;
 /**
  * 服务端 acceptor wrapper, 负责初始化并启动acceptor.
  */
-public class JupiterSpringServer implements InitializingBean {
+public class FireflySpringServer implements InitializingBean {
 
     private JServer server;
     private RegistryService.RegistryType registryType;

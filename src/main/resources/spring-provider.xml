@@ -10,7 +10,7 @@
 
     <bean id="providerAcceptor" class="org.firefly.transport.netty.acceptor.ProviderServerNettyTcpAcceptor" />
 
-    <firefly:server id="jupiterServer" registryType="default" acceptor="providerAcceptor">
+    <firefly:server id="fireflyServer" registryType="default" acceptor="providerAcceptor">
         <firefly:property registryServerAddresses="127.0.0.1:20001" />
         <!-- 可选配置 -->
         <!--
@@ -23,7 +23,7 @@
     <!-- provider -->
     <bean id="serviceTest" class="org.firefly.example.providerservice.ServiceTestImpl" />
 
-    <firefly:provider id="serviceTestProvider" server="jupiterServer" providerImpl="serviceTest">
+    <firefly:provider id="serviceTestProvider" server="fireflyServer" providerImpl="serviceTest">
         <firefly:property weight="100"/>
         <!-- 可选配置 -->
         <!--

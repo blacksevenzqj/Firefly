@@ -14,13 +14,13 @@ import java.util.concurrent.Executor;
 
 import static org.firefly.common.util.Preconditions.checkNotNull;
 
-public class JupiterSpringProviderBean implements InitializingBean, ApplicationContextAware {
+public class FireflySpringProviderBean implements InitializingBean, ApplicationContextAware {
 
-    private static final InternalLogger logger = InternalLoggerFactory.getInstance(JupiterSpringProviderBean.class);
+    private static final InternalLogger logger = InternalLoggerFactory.getInstance(FireflySpringProviderBean.class);
 
     private ServiceWrapper serviceWrapper;                      // 服务元信息
 
-    private JupiterSpringServer server;
+    private FireflySpringServer server;
 
     private Object providerImpl;                                // 服务对象
 //    private ProviderInterceptor[] providerInterceptors;         // 私有拦截器
@@ -60,11 +60,11 @@ public class JupiterSpringProviderBean implements InitializingBean, ApplicationC
                 .register();
     }
 
-    public JupiterSpringServer getServer() {
+    public FireflySpringServer getServer() {
         return server;
     }
 
-    public void setServer(JupiterSpringServer server) {
+    public void setServer(FireflySpringServer server) {
         this.server = server;
     }
 
