@@ -25,7 +25,7 @@ import org.firefly.rpc.consumer.proxy.future.DefaultInvokeFuture;
 import org.firefly.rpc.consumer.proxy.future.listener.JFutureListener;
 import org.firefly.rpc.consumer.clientserver.FClient;
 import org.firefly.rpc.consumer.proxy.hook.ConsumerHook;
-import org.firefly.rpc.exeption.JupiterRemoteException;
+import org.firefly.rpc.exeption.FireflyRemoteException;
 import org.firefly.serialization.Serializer;
 import org.firefly.serialization.SerializerFactory;
 import org.firefly.serialization.SerializerType;
@@ -200,7 +200,7 @@ abstract class AbstractDispatcher implements Dispatcher {
                 }
 
                 ResultWrapper result = new ResultWrapper();
-                result.setError(new JupiterRemoteException(cause));
+                result.setError(new FireflyRemoteException(cause));
 
                 JResponse response = new JResponse(requestBytes.invokeId());
                 response.status(Status.CLIENT_ERROR);

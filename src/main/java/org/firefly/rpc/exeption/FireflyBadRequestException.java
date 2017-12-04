@@ -17,7 +17,7 @@
 package org.firefly.rpc.exeption;
 
 /**
- * Usually it means that the server can not handle the new request.
+ * Request content deserialize failure.
  *
  * For efficiency this exception will not have a stack trace.
  *
@@ -26,21 +26,21 @@ package org.firefly.rpc.exeption;
  *
  * @author jiachun.fjc
  */
-public class JupiterServerBusyException extends JupiterRemoteException {
+public class FireflyBadRequestException extends FireflyRemoteException {
 
-    private static final long serialVersionUID = 4812626729436624336L;
+    private static final long serialVersionUID = -6603241073638657127L;
 
-    public JupiterServerBusyException() {}
+    public FireflyBadRequestException() {}
 
-    public JupiterServerBusyException(String message) {
+    public FireflyBadRequestException(String message) {
         super(message);
     }
 
-    public JupiterServerBusyException(String message, Throwable cause) {
+    public FireflyBadRequestException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public JupiterServerBusyException(Throwable cause) {
+    public FireflyBadRequestException(Throwable cause) {
         super(cause);
     }
 

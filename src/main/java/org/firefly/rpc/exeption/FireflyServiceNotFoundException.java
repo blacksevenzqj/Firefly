@@ -26,21 +26,21 @@ package org.firefly.rpc.exeption;
  *
  * @author jiachun.fjc
  */
-public class JupiterServiceNotFoundException extends JupiterRemoteException {
+public class FireflyServiceNotFoundException extends FireflyRemoteException {
 
     private static final long serialVersionUID = -2277731243490443074L;
 
-    public JupiterServiceNotFoundException() {}
+    public FireflyServiceNotFoundException() {}
 
-    public JupiterServiceNotFoundException(String message) {
+    public FireflyServiceNotFoundException(String message) {
         super(message);
     }
 
-    public JupiterServiceNotFoundException(String message, Throwable cause) {
+    public FireflyServiceNotFoundException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public JupiterServiceNotFoundException(Throwable cause) {
+    public FireflyServiceNotFoundException(Throwable cause) {
         super(cause);
     }
 

@@ -22,10 +22,10 @@ import org.firefly.rpc.tracking.TracingUtil;
 import org.firefly.model.transport.channel.interfice.JChannel;
 import org.firefly.rpc.consumer.proxy.future.listener.JFutureListener;
 import org.firefly.model.transport.configuration.Status;
-import org.firefly.rpc.exeption.JupiterBadRequestException;
-import org.firefly.rpc.exeption.JupiterRemoteException;
-import org.firefly.rpc.exeption.JupiterServerBusyException;
-import org.firefly.rpc.exeption.JupiterServiceNotFoundException;
+import org.firefly.rpc.exeption.FireflyBadRequestException;
+import org.firefly.rpc.exeption.FireflyRemoteException;
+import org.firefly.rpc.exeption.FireflyServerBusyException;
+import org.firefly.rpc.exeption.FireflyServiceNotFoundException;
 import org.firefly.rpc.metric.Metrics;
 import org.firefly.rpc.provider.processor.AbstractProviderProcessor;
 import org.firefly.serialization.Serializer;
@@ -76,14 +76,14 @@ public class ProviderMessageTask implements RejectedRunnable {
             msg = serializer.readObject(bytes, MessageWrapper.class);
             _request.message(msg);
         } catch (Throwable t) {
-            rejected(Status.BAD_REQUEST, new JupiterBadRequestException(t.getMessage()));
+            rejected(Status.BAD_REQUEST, new FireflyBadRequestException(t.getMessage()));
             return;
         }
 
         // 查找服务
         final ServiceWrapper service = _processor.lookupService(msg.getMetadata());
         if (service == null) {
-            rejected(Status.SERVICE_NOT_FOUND, new JupiterServiceNotFoundException(String.valueOf(msg)));
+            rejected(Status.SERVICE_NOT_FOUND, new FireflyServiceNotFoundException(String.valueOf(msg)));
             return;
         }
 
@@ -105,10 +105,10 @@ public class ProviderMessageTask implements RejectedRunnable {
 
     @Override
     public void rejected() {
-        rejected(Status.SERVER_BUSY, new JupiterServerBusyException(String.valueOf(request)));
+        rejected(Status.SERVER_BUSY, new FireflyServerBusyException(String.valueOf(request)));
     }
 
-    private void rejected(Status status, JupiterRemoteException cause) {
+    private void rejected(Status status, FireflyRemoteException cause) {
         if (METRIC_NEEDED) {
             MetricsHolder.rejectionMeter.mark();
         }

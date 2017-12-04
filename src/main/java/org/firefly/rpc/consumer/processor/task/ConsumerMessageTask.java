@@ -8,7 +8,7 @@ import org.firefly.model.rpc.response.ResultWrapper;
 import org.firefly.model.transport.channel.interfice.JChannel;
 import org.firefly.model.transport.configuration.Status;
 import org.firefly.rpc.consumer.proxy.future.DefaultInvokeFuture;
-import org.firefly.rpc.exeption.JupiterSerializationException;
+import org.firefly.rpc.exeption.FireflySerializationException;
 import org.firefly.serialization.Serializer;
 import org.firefly.serialization.SerializerFactory;
 import static org.firefly.common.util.StackTraceUtil.stackTrace;
@@ -44,7 +44,7 @@ public class ConsumerMessageTask implements Runnable {
 
             _response.status(Status.DESERIALIZATION_FAIL);
             wrapper = new ResultWrapper();
-            wrapper.setError(new JupiterSerializationException(t));
+            wrapper.setError(new FireflySerializationException(t));
         }
         _response.result(wrapper);
 

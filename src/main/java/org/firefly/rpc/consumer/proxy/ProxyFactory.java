@@ -33,8 +33,6 @@ import java.util.List;
 import static org.firefly.common.util.Preconditions.checkArgument;
 import static org.firefly.common.util.Preconditions.checkNotNull;
 
-
-
 /**
  * Proxy factory
  * Consumer对象代理工厂, [group, providerName, version]

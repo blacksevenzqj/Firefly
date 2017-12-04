@@ -14,11 +14,6 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Connections watchdog.
- *
- * jupiter
- * org.jupiter.transport.netty.handler.connector
- *
- * @author jiachun.fjc
  */
 @ChannelHandler.Sharable
 public abstract class ConnectionWatchdog extends ChannelInboundHandlerAdapter implements TimerTask, ChannelHandlerHolder {

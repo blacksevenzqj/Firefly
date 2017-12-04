@@ -12,10 +12,10 @@ import org.firefly.model.transport.configuration.Status;
 import org.firefly.model.rpc.type.DispatchType;
 import org.firefly.rpc.consumer.proxy.future.listener.JListener;
 import org.firefly.rpc.consumer.proxy.hook.ConsumerHook;
-import org.firefly.rpc.exeption.JupiterBizException;
-import org.firefly.rpc.exeption.JupiterRemoteException;
-import org.firefly.rpc.exeption.JupiterSerializationException;
-import org.firefly.rpc.exeption.JupiterTimeoutException;
+import org.firefly.rpc.exeption.FireflyBizException;
+import org.firefly.rpc.exeption.FireflyRemoteException;
+import org.firefly.rpc.exeption.FireflySerializationException;
+import org.firefly.rpc.exeption.FireflyTimeoutException;
 
 import java.net.SocketAddress;
 import java.util.concurrent.ConcurrentMap;
@@ -83,9 +83,9 @@ public class DefaultInvokeFuture<V> extends AbstractInvokeFuture<V> {
         } catch (Signal s) {
             SocketAddress address = channel.remoteAddress();
             if (s == TIMEOUT) {
-                throw new JupiterTimeoutException(address, sent ? Status.SERVER_TIMEOUT : Status.CLIENT_TIMEOUT);
+                throw new FireflyTimeoutException(address, sent ? Status.SERVER_TIMEOUT : Status.CLIENT_TIMEOUT);
             } else {
-                throw new JupiterRemoteException(s.name(), address);
+                throw new FireflyRemoteException(s.name(), address);
             }
         }
     }
@@ -138,26 +138,26 @@ public class DefaultInvokeFuture<V> extends AbstractInvokeFuture<V> {
     private void setException(byte status, JResponse response) {
         Throwable cause;
         if (status == Status.SERVER_TIMEOUT.value()) {
-            cause = new JupiterTimeoutException(channel.remoteAddress(), Status.SERVER_TIMEOUT);
+            cause = new FireflyTimeoutException(channel.remoteAddress(), Status.SERVER_TIMEOUT);
         } else if (status == Status.CLIENT_TIMEOUT.value()) {
-            cause = new JupiterTimeoutException(channel.remoteAddress(), Status.CLIENT_TIMEOUT);
+            cause = new FireflyTimeoutException(channel.remoteAddress(), Status.CLIENT_TIMEOUT);
         } else if (status == Status.DESERIALIZATION_FAIL.value()) {
             ResultWrapper wrapper = response.result();
-            cause = (JupiterSerializationException) wrapper.getResult();
+            cause = (FireflySerializationException) wrapper.getResult();
         } else if (status == Status.SERVICE_EXPECTED_ERROR.value()) {
             ResultWrapper wrapper = response.result();
             cause = (Throwable) wrapper.getResult();
         } else if (status == Status.SERVICE_UNEXPECTED_ERROR.value()) {
             ResultWrapper wrapper = response.result();
             String message = String.valueOf(wrapper.getResult());
-            cause = new JupiterBizException(message, channel.remoteAddress());
+            cause = new FireflyBizException(message, channel.remoteAddress());
         } else {
             ResultWrapper wrapper = response.result();
             Object result = wrapper.getResult();
-            if (result != null && result instanceof JupiterRemoteException) {
-                cause = (JupiterRemoteException) result;
+            if (result != null && result instanceof FireflyRemoteException) {
+                cause = (FireflyRemoteException) result;
             } else {
-                cause = new JupiterRemoteException(response.toString(), channel.remoteAddress());
+                cause = new FireflyRemoteException(response.toString(), channel.remoteAddress());
             }
         }
         setException(cause);

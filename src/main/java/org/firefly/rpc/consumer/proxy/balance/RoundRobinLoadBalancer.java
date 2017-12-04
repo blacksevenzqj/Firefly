@@ -40,11 +40,6 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
  *
  * **********************************************************************
  * </pre>
- *
- * jupiter
- * org.jupiter.rpc.load.balance
- *
- * @author jiachun.fjc
  */
 public class RoundRobinLoadBalancer extends AbstractLoadBalancer {
 

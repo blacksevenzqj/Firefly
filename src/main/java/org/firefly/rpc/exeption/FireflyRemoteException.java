@@ -26,46 +26,46 @@ import java.net.SocketAddress;
  *
  * @author jiachun.fjc
  */
-public class JupiterRemoteException extends RuntimeException {
+public class FireflyRemoteException extends RuntimeException {
 
     private static final long serialVersionUID = -6516335527982400712L;
 
     private final SocketAddress remoteAddress;
 
-    public JupiterRemoteException() {
+    public FireflyRemoteException() {
         this.remoteAddress = null;
     }
 
-    public JupiterRemoteException(SocketAddress remoteAddress) {
+    public FireflyRemoteException(SocketAddress remoteAddress) {
         this.remoteAddress = remoteAddress;
     }
 
-    public JupiterRemoteException(Throwable cause) {
+    public FireflyRemoteException(Throwable cause) {
         super(cause);
         this.remoteAddress = null;
     }
 
-    public JupiterRemoteException(Throwable cause, SocketAddress remoteAddress) {
+    public FireflyRemoteException(Throwable cause, SocketAddress remoteAddress) {
         super(cause);
         this.remoteAddress = remoteAddress;
     }
 
-    public JupiterRemoteException(String message) {
+    public FireflyRemoteException(String message) {
         super(message);
         this.remoteAddress = null;
     }
 
-    public JupiterRemoteException(String message, SocketAddress remoteAddress) {
+    public FireflyRemoteException(String message, SocketAddress remoteAddress) {
         super(message);
         this.remoteAddress = remoteAddress;
     }
 
-    public JupiterRemoteException(String message, Throwable cause) {
+    public FireflyRemoteException(String message, Throwable cause) {
         super(message, cause);
         this.remoteAddress = null;
     }
 
-    public JupiterRemoteException(String message, Throwable cause, SocketAddress remoteAddress) {
+    public FireflyRemoteException(String message, Throwable cause, SocketAddress remoteAddress) {
         super(message, cause);
         this.remoteAddress = remoteAddress;
     }
