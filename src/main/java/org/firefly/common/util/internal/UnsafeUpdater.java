@@ -2,12 +2,6 @@ package org.firefly.common.util.internal;
 
 import org.firefly.common.util.ExceptionUtil;
 
-/**
- * jupiter
- * org.jupiter.common.util.internal
- *
- * @author jiachun.fjc
- */
 public class UnsafeUpdater {
 
     /**

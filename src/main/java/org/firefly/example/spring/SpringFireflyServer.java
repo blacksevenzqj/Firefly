@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 2.再启动 SpringServer
  * 3.最后启动 SpringClient
  */
-public class SpringJupiterServer {
+public class SpringFireflyServer {
 
     public static void main(String[] args) {
         new ClassPathXmlApplicationContext("classpath:spring-provider.xml");

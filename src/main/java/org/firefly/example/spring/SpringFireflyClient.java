@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 2.再启动 SpringServer
  * 3.最后启动 SpringClient
  */
-public class SpringJupiterClient {
+public class SpringFireflyClient {
 
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:spring-consumer.xml");

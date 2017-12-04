@@ -14,12 +14,6 @@ import java.util.concurrent.ConcurrentMap;
 
 import static org.objectweb.asm.Opcodes.*;
 
-/**
- * jupiter
- * org.jupiter.common.util
- *
- * @author jiachun.fjc
- */
 public abstract class FastMethodAccessor {
 
     private static final ConcurrentMap<Class<?>, FastMethodAccessor> fastAccessorCache = Maps.newConcurrentMap();

@@ -23,9 +23,6 @@ import java.lang.reflect.Modifier;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
 /**
- * jupiter
- * org.jupiter.common.concurrent.atomic
- *
  * Forked from <a href="https://github.com/netty/netty">Netty</a>.
  */
 @SuppressWarnings("unchecked")

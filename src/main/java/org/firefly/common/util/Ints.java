@@ -4,11 +4,6 @@ import static org.firefly.common.util.Preconditions.checkArgument;
 
 /**
  * Static utility methods pertaining to {@code int} primitives.
- *
- * jupiter
- * org.jupiter.common.util
- *
- * @author jiachun.fjc
  */
 @SuppressWarnings("all")
 public final class Ints {
